@@ -10,6 +10,15 @@ app.get('/sum', (req, res) => {
         res.send('missing arguments')
     }
 })
+app.get('/resta', (req, res) => {
+    console.log(req.query.x + "-" + req.query.y);
+    if(req.query.x && req.query.y){
+        res.send((Number(req.query.x) - Number(req.query.y)).toString())
+    }else{
+        res.send('missing arguments')
+    }
+})
+
 
 
 app.listen(process.env.PORT, () => {
